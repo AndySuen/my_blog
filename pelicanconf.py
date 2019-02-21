@@ -40,7 +40,7 @@ PAGE_DIRS = ['pages']
 ARTICLE_DIRS = ['articles']
 
 ARTICLE_URL = 'blog/{date:%Y}/{slug}'
-ARTICLE_SAVE_AS = 'blog/{date:%Y}/{slug}/index.html'
+ARTICLE_SAVE_AS = 'blog/{date:%Y}/{slug}.html'
 
 SIDEBAR_DIGEST = 'Web developer'
 
