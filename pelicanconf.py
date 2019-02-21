@@ -6,7 +6,7 @@ AUTHOR = 'Andy'
 SITENAME = "Andy's blog"
 SITEURL = 'http://localhost:8000'
 
-TWITTER_USERNAME = ''
+TWITTER_USERNAME = 'ibingfei'
 
 PATH = 'content'
 
