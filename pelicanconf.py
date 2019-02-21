@@ -34,8 +34,12 @@ SOCIAL = (('twitter', 'https://twitter.com/ibingfei'),
 
 DEFAULT_PAGINATION = 10
 
-STATIC_PATHS = ['images', 'extras/CNAME']
-EXTRA_PATH_METADATA = {'extras/CNAME': {'path': 'CNAME'},}
+STATIC_PATHS = ['images', 'extra']
+EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},
+                       'extra/favicon.ico': {'path': 'favicon.ico'},
+                       'extra/apple-touch-icon.png': {'path': 'apple-touch-icon.png'},}
+
+FAVICON = '/favicon.ico'
 
 PAGE_DIRS = ['pages']
 ARTICLE_DIRS = ['articles']
