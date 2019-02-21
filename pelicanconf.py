@@ -34,7 +34,8 @@ SOCIAL = (('twitter', 'https://twitter.com/ibingfei'),
 
 DEFAULT_PAGINATION = 10
 
-STATIC_PATHS = ['images']
+STATIC_PATHS = ['images', 'extras/CNAME']
+EXTRA_PATH_METADATA = {'extras/CNAME': {'path': 'CNAME'},}
 
 PAGE_DIRS = ['pages']
 ARTICLE_DIRS = ['articles']
