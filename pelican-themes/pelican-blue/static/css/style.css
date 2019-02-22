@@ -222,10 +222,6 @@ aside > h2 {
 
 @media (max-width: 800px) {
 
-  html {
-    font-size: 12px;
-  }
-
   aside {
     left: 0;
     max-width: none;
