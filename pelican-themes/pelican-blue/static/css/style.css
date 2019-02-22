@@ -30,7 +30,7 @@ h1, h2 {
 
 .post_detail {
   font-size: 2em;
-  line-height: 1em;
+  line-height: 1.2em;
 }
 
 .entry-content {
@@ -45,13 +45,13 @@ h1, h2 {
 }
 
 article section .about {
-  font-size: 18px;
+  font-size: 1.3em;
   color: #444;
   text-align: justify;
 }
 
 article section .blog-post {
-  font-size: 14px;
+  font-size: 1em;
 }
 
 /* Body */
@@ -80,7 +80,7 @@ article > header {
   border-radius: 5px 5px;
 }
 .article_left > h1 {
-  font-size: 20px;
+  font-size: 1.4em;
 }
 .article_right {
   background-color: white;
@@ -112,7 +112,7 @@ a:hover { text-decoration: underline; }
 
 /* Code */
 .highlight pre {
-  font-size: 14px;
+  font-size: 85%;
   overflow: auto;
   padding: 8px;
 }
@@ -127,7 +127,7 @@ code {
 
 /* Sidebar */
 aside {
-  font-size: 14px;
+  font-size: 1em;
   width: 220px; height: 100%;
   position: fixed;
   top: 0; left: 0;
@@ -147,7 +147,7 @@ aside > ul {
 }
 aside > h2 {
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 1em;
   margin-bottom: 5px;
 }
 
@@ -182,7 +182,7 @@ aside > h2 {
 }
 
 .nav > ul > li {
-  font-size: 15px;
+  font-size: 1.1em;
 }
 
 .nav a {
@@ -207,6 +207,9 @@ aside > h2 {
   border-bottom: 1px solid #328cc7;
 }
 
+.nav li:last-of-type .nav__link {
+  border-bottom: 0;
+}
 
 .blog_roll_link {
   display: block;
@@ -218,6 +221,10 @@ aside > h2 {
 /*--------Responsive------------*/
 
 @media (max-width: 800px) {
+
+  html {
+    font-size: 12px;
+  }
 
   aside {
     left: 0;
@@ -256,8 +263,15 @@ aside > h2 {
 
   body > article {
     margin: 0 auto;
-    padding-top: 5px;
-    padding: 1em;
+    padding: 1em 1.5em;
+  }
+
+  .title, .post_title{
+    margin: 1em 0;
+  }
+
+  .entry-content {
+    margin-top: 2.5em;
   }
 
   footer {
