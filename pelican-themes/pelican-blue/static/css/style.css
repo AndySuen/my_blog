@@ -86,8 +86,9 @@ article > header {
   background-color: white;
 }
 .post_list {
+  color: #999;
   list-style-type: none;
-  padding: 10px 10px;
+  padding: 10px 0;
   -moz-border-radius: 5px 0;
   -webkit-border-radius: 5px 0;
   border-radius: 5px 5px;
@@ -217,6 +218,22 @@ aside > h2 {
   border-bottom: 3px solid #328cc7;
 }
 
+img {
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+th, td {
+  border: 0.5px solid #ddd;padding: 4px 12px;
+}
+
+blockquote {
+  border-left: 2px solid #eee;
+  padding-left: 1em;
+  margin-left: 1em;
+}
 
 /*--------Responsive------------*/
 
@@ -281,8 +298,4 @@ aside > h2 {
     width: 50px;
     margin: 10px auto;
   }
-}
-
-img {
-  max-width: 100%;
 }
