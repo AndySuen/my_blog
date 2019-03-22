@@ -61,3 +61,13 @@ DISPLAY_CATEGORIES_ON_MENU = False
 THEME = 'pelican-themes/pelican-blue'
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+        'markdown.extensions.toc': {'permalink': True},
+    },
+    'output_format': 'html5',
+}

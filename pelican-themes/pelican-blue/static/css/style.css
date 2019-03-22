@@ -35,7 +35,7 @@ h1, h2 {
 
 .entry-content {
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   text-align: justify;
   color: #333;
 }
@@ -62,6 +62,10 @@ body > article, footer {
   max-width: 700px;
   margin: 40px auto auto 355px;
   padding: 20px 80px 10px;
+}
+
+footer {
+  color: #999;
 }
 
 article ol.posts {
@@ -150,6 +154,27 @@ aside > h2 {
   text-transform: uppercase;
   font-size: 1em;
   margin-bottom: 5px;
+}
+
+.blog-post h2,
+.blog-post h3,
+.blog-post h4,
+.blog-post h5,
+.blog-post h6 {
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.3em;
+}
+
+.headerlink {
+  display: none;
+}
+
+h2:hover .headerlink,
+h3:hover .headerlink,
+h4:hover .headerlink,
+h5:hover .headerlink,
+h6:hover .headerlink {
+  display: inline-block
 }
 
 #avatar {

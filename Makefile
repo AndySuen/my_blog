@@ -82,8 +82,10 @@ github: publish
 	git push origin $(GITHUB_PAGES_BRANCH)
 
 source:
+ifneq (git status -s, '')
 	git add .
 	git commit -m 'update blog'
+endif
 	git push $(GITHUB_SOURCE_BRANCH)
 
 
