@@ -66,11 +66,11 @@ def josephus(n):
 
 上述结果用二进制表示更加简洁，
 
-由于 n = b<sub>m</sub>b<sub>m-1</sub>b<sub>m-2</sub>...b<sub>1</sub> ，
+由于 n = b<sub>m</sub>b<sub>m-1</sub>b<sub>m-2</sub>...b<sub>0</sub> ，
 
-则 k = b<sub>m-1</sub>b<sub>m-2</sub>…b<sub>1</sub>，
+则 k = b<sub>m-1</sub>b<sub>m-2</sub>…b<sub>0</sub>，
 
-幸存者编号 s = 2k + 1 = b<sub>m-1</sub>b<sub>m-2</sub>…b<sub>1</sub>1 = b<sub>m-1</sub>b<sub>m-2</sub>...b<sub>1</sub>b<sub>m</sub>。
+幸存者编号 s = 2k + 1 = b<sub>m-1</sub>b<sub>m-2</sub>…b<sub>0</sub>1 = b<sub>m-1</sub>b<sub>m-2</sub>...b<sub>0</sub>b<sub>m</sub>。
 
 即将 n 二进制中首位移到末尾即可。
 
