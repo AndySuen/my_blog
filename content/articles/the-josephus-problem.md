@@ -1,6 +1,6 @@
 Title: The Josephus Problem（约瑟夫问题）
 Date: 2019-04-21 22:00
-Category: computer, algorithm, maths
+Category: algorithm
 Tags: computer, algorithm, maths
 Slug: the-josephus-problem
 Authors: 
