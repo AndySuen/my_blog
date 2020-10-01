@@ -36,7 +36,7 @@ h1, h2 {
 .entry-content {
   margin-top: 50px;
   margin-bottom: 80px;
-  text-align: justify;
+  /* text-align: justify; */
   color: #333;
 }
 
