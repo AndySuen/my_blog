@@ -22,7 +22,7 @@
 <body>
 	<main>
 		<h1>Budget Abacus</h1>
-		<textarea name="input" id="input-field"></textarea>
+		<textarea name="input" id="input-field" placeholder="# usage: 1. 以 # 开头的行被忽略。2. 统计每行末尾的数字，支持数字的四则运算，如“芳记小食店 51.5+12.5”。3. 支持在页面上 Cmd/Ctrl + V 执行粘贴并计算，和复制 Cmd/Ctrl + C （快捷复制运算结果）"></textarea>
 		<div class="button">
 			<input type="button" value="计算" id="submit">
 			<input type="reset" value="清空" id="reset">
@@ -71,6 +71,9 @@
 
 		function abacus(str) {
 			var num = getNumbers(str);
+			if (!num.length) {
+				return '0'
+			}
 			var outputStr = `${num.join(' + ')}`;
 			var sum = eval(outputStr)
 
