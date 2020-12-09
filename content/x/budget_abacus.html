@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta author="ibingfei">
+	<title>Budget Abacus</title>
+	<style>
+		main {width: 800px; margin: 0 auto; text-align: center; font-family: monospace;}
+		textarea {width: 100%; font-family: monospace; border-radius: 4px; box-sizing: border-box; border: 1px solid #aaa; padding: 8px;}
+		#input-field {height: 32em}
+		#output-field {height: 8em}
+		.button {text-align: center;}
+		.button input {margin: 10px; width: 200px;}
+		@media (max-width: 800px) {
+			main {width: 100%}
+			#input-field {height: 60vh}
+			#output-field {height: 20vh}
+			.button input {width: 25vw}
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Budget Abacus</h1>
+		<textarea name="input" id="input-field"></textarea>
+		<div class="button">
+			<input type="button" value="计算" id="submit">
+			<input type="reset" value="清空" id="reset">
+		</div>
+		<textarea name="output" id="output-field" rows="8"></textarea>
+	</main>
+	<script>
+		var inputEle = document.querySelector('#input-field');
+		var outputEle = document.querySelector('#output-field');
+		var submitBtn = document.querySelector('#submit');
+		var resetBtn = document.querySelector('#reset');
+
+		submitBtn.addEventListener('click', submitHandler);
+		resetBtn.addEventListener('click', resetHandler);
+
+		[inputEle, outputEle].map(el => ['copy', 'paste'].map(ev => el.addEventListener(ev, evStopPropagation)));
+
+		window.addEventListener('paste', pasteHandler);
+		window.addEventListener('copy', copyHandler);
+		window.addEventListener('blur', blurHandler);
+
+		function submitHandler(e) {
+			input = inputEle.value;
+			outputEle.value = abacus(input);
+		}
+
+		function resetHandler(e) {
+			inputEle.value && (inputEle.value = '');
+			outputEle.value && (outputEle.value = '');
+		}
+
+		function getNumbers(str) {
+			var lines = str.split('\n')
+			var numbers = []
+			var re = /(\+|\-)?\d+\.?\d*(\s*[\+\-\*\/]\s*(\+|\-)?\d+\.?\d*)*[,\.，。\s]*$/;
+
+			for (let line of lines) {
+				if (line.startsWith('#')) continue;
+				n = line.match(re)
+				if (n != null) {
+					numbers.push(n[0])
+				}
+			}
+			return numbers;
+		}
+
+		function abacus(str) {
+			var num = getNumbers(str);
+			var outputStr = `${num.join(' + ')}`;
+			var sum = eval(outputStr)
+
+			outputStr += `\n=\n${sum}`
+			return outputStr;
+		}
+
+		function evStopPropagation(e) {
+			e.stopPropagation();
+		}
+
+		function pasteHandler(e) {
+			e.stopPropagation();
+			e.preventDefault();
+			inputEle.value = e.clipboardData.getData('Text');
+			input = inputEle.value;
+			outputEle.value = abacus(input);
+		}
+
+		function copyHandler(e) {
+			lines = outputEle.value.split('\n');
+			if (lines.length == 0) {
+				return false;
+			}
+			var startPos = outputEle.value.length - lines[lines.length - 1].length;
+			var endPos = outputEle.value.length;
+			outputEle.focus();
+			outputEle.selectionStart = startPos;
+			outputEle.selectionEnd = endPos;
+			return true;
+		}
+
+		function blurHandler(e) {
+			outputEle.blur();
+		}
+	</script>
+</body>
+</html>
