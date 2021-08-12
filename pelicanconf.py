@@ -6,7 +6,7 @@ AUTHOR = 'Andy'
 SITENAME = "Andy's blog"
 SITEURL = 'http://localhost:8000'
 
-TWITTER_USERNAME = 'ibingfei'
+TWITTER_USERNAME = 'ibugfree'
 
 PATH = 'content'
 
@@ -29,7 +29,7 @@ AUTHOR_FEED_RSS = None
 #          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('twitter', 'https://twitter.com/ibingfei'),
+SOCIAL = (('twitter', 'https://twitter.com/ibugfree'),
           ('github', 'https://github.com/andysuen'),)
 
 DEFAULT_PAGINATION = 10
