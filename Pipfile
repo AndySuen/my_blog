@@ -1,0 +1,4 @@
+[packages]
+pelican = "*"
+Markdown = "*"
+ghp-import = "*"
